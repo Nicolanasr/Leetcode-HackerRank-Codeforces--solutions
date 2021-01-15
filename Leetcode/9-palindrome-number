@@ -1,0 +1,12 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        xp = x
+        x = list(str(x))
+
+        for i in range(round(len(x)/2)):
+            tmp = x[i]
+            x[i] = x[len(x) - 1 - i]
+            x[len(x) - 1-  i] = tmp
+
+        x = "".join(x)
+        return ((str(x)) == str(xp))
